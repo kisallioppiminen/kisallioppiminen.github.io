@@ -12,4 +12,21 @@ if (document.domain === 'localhost' || document.domain === '127.0.0.1') {
   temp_frontend_base_url = 'https://kisallioppiminen.github.io/';
 }
 
-const FRONTEND_BASE_URL = temp_frontend_base_url;
+function inferFrontendBaseUrl() {
+  if (temp_frontend_base_url) {
+    return temp_frontend_base_url;
+  }
+
+  const origin = window.location.origin;
+  const path = window.location.pathname;
+
+  // If site is deployed under /web-page/, use that as base.
+  if (path.startsWith('/web-page/')) {
+    return origin + '/web-page/';
+  }
+
+  // Fallback to root.
+  return origin + '/';
+}
+
+const FRONTEND_BASE_URL = inferFrontendBaseUrl();
