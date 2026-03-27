@@ -1,3 +1,8 @@
 <!-- Load _config.yml scripts: -->
 {% for src in site.resources.js %}
-	<script src="{{ src }}"></script>{% endfor %}
+	{% if src contains "//" %}
+		<script src="{{ src }}"></script>
+	{% else %}
+		<script src="{{ site.baseurl }}{{ src }}"></script>
+	{% endif %}
+{% endfor %}
