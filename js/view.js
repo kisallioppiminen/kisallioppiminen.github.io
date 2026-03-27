@@ -35,7 +35,7 @@ class View {
 
 
     ga.href = BACKEND_BASE_URL + 'users/auth/google_oauth2';
-    gimg.src = '/img/google-login.png';
+    gimg.src = FRONTEND_BASE_URL + 'img/google-login.png';
 
     ga.onclick = function () {
       document.cookie = 'attemptedLogin=true; path=/';

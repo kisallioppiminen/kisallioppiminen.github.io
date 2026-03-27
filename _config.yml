@@ -33,6 +33,7 @@ resources:
 
     # Download own scripts
     - "/js/common.js"
+    - "/js/session.js"
     - "/js/view.js"
     - "/js/exercises.js"
     - "/js/jquery-ui.js"
