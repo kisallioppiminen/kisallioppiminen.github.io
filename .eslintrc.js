@@ -6,11 +6,8 @@ module.exports = {
         "jasmine": true
     },
     "globals": {
-      "backend": true,
       "view": true,
-      "Session": true,
       "module": true,
-      "Scoreboard": true,
       "sorttable": true,
       "Exercises": true
     },

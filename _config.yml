@@ -32,16 +32,10 @@ resources:
 
     # Download own scripts
     - "/js/common.js"
-    - "/js/session.js"
     - "/js/view.js"
-    - "/js/scheduleManager.js"
     - "/js/exercises.js"
-    - "/js/backend.js"
     - "/js/jquery-ui.js"
     - "/js/mooc.js"
-    - "/js/button/button.js"
-    - "/js/statistics.js"
-    - "/js/scheduleCheckbox.js"
     - "/js/init.js"
 
 
