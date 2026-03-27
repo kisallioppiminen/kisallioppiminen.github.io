@@ -1,0 +1,400 @@
+/* Modern Layout CSS for Kisallioppiminen.fi */
+/* Student-friendly, card-based design with smooth interactions */
+
+/* Color variables */
+:root {
+  --color-primary-blue: #2563eb;
+  --color-primary-purple: #7c3aed;
+  --color-primary-green: #059669;
+  --color-accent-light: #ece7f6;
+  --color-accent-blue-light: #eff6ff;
+  --color-accent-purple-light: #faf5ff;
+  --color-bg: #f9fafb;
+  --color-white: #ffffff;
+  --color-text-dark: #111827;
+  --color-text-light: #6b7280;
+  --color-border: #e5e7eb;
+  --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: 0.15s ease-in-out;
+}
+
+/* Layout */
+.courses-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem;
+  background: var(--color-bg);
+}
+
+@media (max-width: 768px) {
+  .courses-container {
+    padding: 2rem;
+  }
+}
+
+/* Hero section */
+.hero-section {
+  text-align: center;
+  margin-bottom: 4rem;
+  animation: fadeInDown 0.6s ease-out;
+}
+
+.hero-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+@media (max-width: 768px) {
+  .hero-section h2 {
+    font-size: 1.875rem;
+  }
+}
+
+.hero-section p {
+  font-size: 1.125rem;
+  color: var(--color-text-light);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Curriculum filter tabs */
+.curriculum-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.curriculum-tabs button {
+  padding: 1rem 1.5rem;
+  border: 2px solid var(--color-border);
+  background: var(--color-white);
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+  color: var(--color-text-dark);
+}
+
+.curriculum-tabs button:hover {
+  border-color: var(--color-primary-blue);
+  color: var(--color-primary-blue);
+}
+
+.curriculum-tabs button.active {
+  background: var(--color-primary-blue);
+  border-color: var(--color-primary-blue);
+  color: var(--color-white);
+}
+
+/* Course grid */
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+@media (max-width: 1024px) {
+  .courses-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .courses-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* Course card base */
+.course-card {
+  background: var(--color-white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  cursor: pointer;
+  position: relative;
+  border-top: 4px solid var(--color-border);
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+/* Card animation delays */
+.course-card:nth-child(1) { animation-delay: 0s; }
+.course-card:nth-child(2) { animation-delay: 0.05s; }
+.course-card:nth-child(3) { animation-delay: 0.1s; }
+.course-card:nth-child(4) { animation-delay: 0.15s; }
+.course-card:nth-child(5) { animation-delay: 0.2s; }
+.course-card:nth-child(6) { animation-delay: 0.25s; }
+.course-card:nth-child(7) { animation-delay: 0.3s; }
+.course-card:nth-child(8) { animation-delay: 0.35s; }
+.course-card:nth-child(9) { animation-delay: 0.4s; }
+.course-card:nth-child(10) { animation-delay: 0.45s; }
+.course-card:nth-child(11) { animation-delay: 0.5s; }
+.course-card:nth-child(12) { animation-delay: 0.55s; }
+.course-card:nth-child(13) { animation-delay: 0.6s; }
+.course-card:nth-child(14) { animation-delay: 0.65s; }
+.course-card:nth-child(15) { animation-delay: 0.7s; }
+.course-card:nth-child(16) { animation-delay: 0.75s; }
+.course-card:nth-child(17) { animation-delay: 0.8s; }
+.course-card:nth-child(18) { animation-delay: 0.85s; }
+.course-card:nth-child(19) { animation-delay: 0.9s; }
+.course-card:nth-child(20) { animation-delay: 0.95s; }
+
+/* MAA curriculum styling */
+.course-card.curriculum-maa {
+  border-top-color: var(--color-primary-blue);
+}
+
+.course-card.curriculum-maa .course-header {
+  background: linear-gradient(135deg, var(--color-accent-blue-light) 0%, var(--color-white) 100%);
+}
+
+.course-card.curriculum-maa .program-badge {
+  background: var(--color-primary-blue);
+}
+
+.course-card.curriculum-maa .course-title {
+  color: var(--color-primary-blue);
+}
+
+.course-card.curriculum-maa:hover .chapter-preview {
+  color: var(--color-primary-blue);
+}
+
+/* MAB curriculum styling */
+.course-card.curriculum-mab {
+  border-top-color: var(--color-primary-purple);
+}
+
+.course-card.curriculum-mab .course-header {
+  background: linear-gradient(135deg, var(--color-accent-purple-light) 0%, var(--color-white) 100%);
+}
+
+.course-card.curriculum-mab .program-badge {
+  background: var(--color-primary-purple);
+}
+
+.course-card.curriculum-mab .course-title {
+  color: var(--color-primary-purple);
+}
+
+.course-card.curriculum-mab:hover .chapter-preview {
+  color: var(--color-primary-purple);
+}
+
+/* Card hover state */
+.course-card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
+}
+
+@media (max-width: 768px) {
+  .course-card:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* Course card header */
+.course-header {
+  padding: 2rem;
+  transition: background var(--transition-smooth);
+}
+
+/* Program badge */
+.program-badge {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  color: var(--color-white);
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.curriculum-year {
+  display: inline-block;
+  margin-left: 1rem;
+  padding: 0.5rem 1.5rem;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-light);
+}
+
+/* Course title */
+.course-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 1.5rem 0;
+  line-height: 1.3;
+  transition: color var(--transition-smooth);
+}
+
+/* Course body */
+.course-body {
+  padding: 1.5rem 2rem 2rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Chapter preview */
+.chapter-preview {
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+  transition: color var(--transition-smooth);
+  margin-bottom: 1rem;
+}
+
+.chapter-preview strong {
+  display: block;
+  color: var(--color-text-dark);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* Chapter list */
+.chapter-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+}
+
+.chapter-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.chapter-list li:last-child {
+  border-bottom: none;
+}
+
+.chapter-list a {
+  display: block;
+  color: var(--color-text-light);
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 1rem 0;
+  transition: all var(--transition-fast);
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.chapter-list a:before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  transition: all var(--transition-fast);
+  color: var(--color-primary-blue);
+}
+
+.course-card.curriculum-mab .chapter-list a:before {
+  color: var(--color-primary-purple);
+}
+
+.chapter-list a:hover {
+  color: var(--color-text-dark);
+}
+
+.chapter-list a:hover:before {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+/* CTA Button */
+.course-cta {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+  text-align: center;
+  text-decoration: none;
+  width: fit-content;
+}
+
+.course-cta.btn-primary {
+  background: var(--color-primary-blue);
+  color: var(--color-white);
+}
+
+.course-cta.btn-primary:hover {
+  background: #1d4ed8;
+  transform: translateX(4px);
+}
+
+.course-card.curriculum-mab .course-cta.btn-primary {
+  background: var(--color-primary-purple);
+}
+
+.course-card.curriculum-mab .course-cta.btn-primary:hover {
+  background: #6d28d9;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Print styles */
+@media print {
+  .course-card {
+    page-break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid var(--color-border);
+  }
+  
+  .curriculum-tabs {
+    display: none;
+  }
+}
+
+/* Accessibility */
+.course-card:focus {
+  outline: 2px solid var(--color-primary-blue);
+  outline-offset: 2px;
+}
+
+.curriculum-tabs button:focus {
+  outline: 2px solid var(--color-primary-blue);
+  outline-offset: 2px;
+}
