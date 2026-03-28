@@ -74,6 +74,41 @@
     padding: 1.25rem;
     margin: 1rem 0;
     border-radius: 8px;
+    position: relative;
+}
+
+.teoria::before {
+    content: "📘 Teoria";
+    display: block;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: #1e3a8a;
+}
+
+.tehtava > header > h1 {
+    position: relative;
+}
+
+.tehtava > header > h1 > a::before {
+    content: "✏️ Tehtävä";
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #0f172a;
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+.tehtava.first-exercise > header > h1 > a::before {
+    content: "🎯 Ensimmäinen tehtävä";
+}
+
+.panel > header > h1 > a::before {
+    content: "📚 Sisältö";
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #0f172a;
+    display: inline-block;
+    margin-right: 0.5rem;
 }
 
 .tehtavat {

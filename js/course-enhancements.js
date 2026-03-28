@@ -105,6 +105,51 @@ document.addEventListener('DOMContentLoaded', function() {
 
   images.forEach(img => imageObserver.observe(img));
 
+  // Only answers remain collapsible; show all other content.
+  const baseurl = "{{ site.baseurl | default: '' }}";
+
+  document.querySelectorAll('.collapse').forEach(section => {
+    const id = (section.id || '').toLowerCase();
+    const isAnswer = id.endsWith('_v') || id.includes('vastaus');
+    if (!isAnswer) {
+      section.classList.remove('collapse');
+      section.style.display = 'block';
+      section.style.maxHeight = 'none';
+      section.style.opacity = '1';
+    }
+  });
+
+  document.querySelectorAll('a[data-toggle="collapse"]').forEach(link => {
+    const target = document.querySelector(link.getAttribute('data-target'));
+    const targetid = target ? (target.id || '').toLowerCase() : '';
+    const shouldPersist = targetid.endsWith('_v') || targetid.includes('vastaus');
+    if (!shouldPersist) {
+      link.removeAttribute('data-toggle');
+      link.classList.remove('collapsed');
+      link.style.cursor = 'default';
+    }
+  });
+
+  document.querySelectorAll('.close-section').forEach(el => {
+    el.style.display = 'none';
+  });
+
+  // Apply baseurl prefix for absolute internal links and images.
+  if (baseurl) {
+    document.querySelectorAll('a[href^="/"]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (href && !href.startsWith('//')) {
+        a.setAttribute('href', baseurl + href);
+      }
+    });
+    document.querySelectorAll('img[src^="/"]').forEach(img => {
+      const src = img.getAttribute('src');
+      if (src && !src.startsWith('//')) {
+        img.setAttribute('src', baseurl + src);
+      }
+    });
+  }
+
   // MathJax Enhancement (if MathJax is loaded)
   if (typeof MathJax !== 'undefined') {
     MathJax.Hub.Queue(function() {
