@@ -1,163 +1,133 @@
 /* FOOTER */
 
-body > footer {	
+body > footer {
 	width: 100%;
-	background-color: white;
-	padding: 30px 0px;
-	margin-top: 50px;
+	background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+	color: white;
+	padding: 3rem 0 2rem;
+	margin-top: 4rem;
+	box-shadow: 0 -4px 12px rgba(37, 99, 235, 0.15);
 }
 
 body > footer > article {
-	max-width: 1150px;
-	margin: auto;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 2rem;
 }
 
 body > footer > article > section {
-	vertical-align: top;
 	display: inline-block;
 	text-align: left;
-	width: 325px;
-	padding: 23px;
+	width: 30%;
+	padding: 0 2rem;
+	vertical-align: top;
 }
 
-
 body > footer > article > section:first-child {
-	margin-left: 0%;
-	padding-left: 0%;
+	padding-left: 0;
 }
 
 body > footer > article > section:last-child {
-	border-right: none;
-	padding-right: 0%;
-	margin-right: 0%;
+	padding-right: 0;
+}
+
+body > footer h3 {
+	color: #ffffff;
+	font-size: 1.25rem;
+	font-weight: 600;
+	margin-bottom: 1rem;
+	margin-top: 0;
+}
+
+body > footer p {
+	color: #e0e7ff;
+	line-height: 1.6;
+	margin-bottom: 1rem;
+	font-size: 0.95rem;
+}
+
+body > footer a {
+	color: #dbeafe;
+	text-decoration: none;
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	font-weight: 500;
+}
+
+body > footer a:hover {
+	color: #ffffff;
+	text-decoration: underline;
 }
 
 #contact {
-	border-left: 2px solid #f2f2f2;
-	border-right: 2px solid #f2f2f2;
-	width: 400px;
-}
-
-#contact .facebook,
-#contact .irc,
-#contact .email,
-#contact .sourceforge {
-	position: relative;
-	top: -30px;
-}
-
-#contact .blog:before,
-#contact .facebook:before,
-#contact .irc:before,
-#contact .email:before,
-#contact .sourceforge:before {
-	margin-right: 10px;
-	position: relative;
-	top: 12px;
-}
-
-#contact .blog:before {
-	content: url(../img/Crystal_Clear_app_kedit.png);
+	border-left: 1px solid rgba(255, 255, 255, 0.2);
+	border-right: 1px solid rgba(255, 255, 255, 0.2);
+	padding-left: 3rem;
+	padding-right: 3rem;
 }
 
 #contact .facebook:before {
-	content: url(../img/social-media-facebook.png);
-}
-
-#contact .irc:before {
-	content: url(../img/social-media-irc.png);
-}
-
-#contact .email:before {
-	content: url(../img/social-media-email.png);
-}
-
-#contact .sourceforge:before {
-	content: url(../img/social-media-sourceforge.png);
-}
-
-#contact .blog {
-	margin-bottom: 32px;
+	content: "📘";
+	margin-right: 0.5rem;
+	font-size: 1.1em;
 }
 
 #license p img {
-	float: right;
+	opacity: 0.8;
+	transition: opacity 0.3s ease;
+	margin-bottom: 1rem;
 }
 
-#license > img {
-	display: block;
-	max-width: 100%;
-	height: auto;
-	margin-bottom: 30px;
+#license p img:hover {
+	opacity: 1;
 }
 
-main, header, nav, footer > article {
-	max-width: 1150px;
-	margin-left: auto;
-	margin-right: auto;
+#license a:hover img {
+	opacity: 1;
 }
 
-/* Fix whitespace between inline-block footer sections */
-#contact, #license {
-	margin-left: -4px;
-}
-
-@media all and (max-width: 1165px) {
-
-	body > footer > article {
-		display: block;
-		text-align: center;
-	}
-
+/* Responsive Design */
+@media all and (max-width: 1024px) {
 	body > footer > article > section {
-		height: 275px;
-		display: inline-block;
-		border: 0;
-		margin: auto;
-		min-width: 0px;
-		width: initial;
-	}
-
-	#about {
-		width: 300px;
-	}
-
-	#contact .facebook,
-	#contact .irc,
-	#contact .email,
-	#contact .sourceforge {
-		top: 0px;
+		width: 45%;
+		padding: 0 1.5rem;
+		margin-bottom: 2rem;
 	}
 
 	#contact {
-		padding-top: 0;
-		width: 300px;
-		border-right: 0px;
-	}
-
-	#contact p:first-child {
-		padding-top: 0;
-	}
-
-	#license {
-		text-align: center;
-	}
-
-	footer #license p img {
-		float: none;
-		display: block;
-		margin-bottom: 10px;
+		border-left: none;
+		border-right: none;
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
 	}
 }
 
-@media all and (max-width: 760px) {
+@media all and (max-width: 768px) {
+	body > footer {
+		padding: 2.5rem 0 1.5rem;
+	}
 
-	#about,
-	#contact,
-	#license {
-		height: auto;
-		width: 80%;
+	body > footer > article {
+		padding: 0 1rem;
+	}
+
+	body > footer > article > section {
+		display: block;
+		width: 100%;
+		padding: 0;
+		margin-bottom: 2.5rem;
 		text-align: center;
-		border: 0px;
+	}
+
+	#contact {
+		border: none;
+		padding: 0;
+	}
+
+	body > footer h3 {
+		font-size: 1.1rem;
+	}
+
+	body > footer p {
+		font-size: 0.9rem;
 	}
 }

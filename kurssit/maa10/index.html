@@ -6,6 +6,86 @@ main-class: has-atop
 topnav: maa10
 ---
 
+<style>
+    /* Course Table of Contents */
+    .course-toc {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin: 2rem 0;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .course-toc h2 {
+        margin: 0 0 1rem 0;
+        font-size: 1.25rem;
+        color: #1e293b;
+        font-weight: 600;
+    }
+
+    .course-toc ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .course-toc li {
+        margin-bottom: 0.5rem;
+    }
+
+    .course-toc a {
+        display: block;
+        color: #2563eb;
+        text-decoration: none;
+        padding: 0.5rem 0;
+        border-radius: 4px;
+        transition: all 0.2s ease;
+        font-weight: 500;
+    }
+
+    .course-toc a:hover {
+        background: #eff6ff;
+        color: #1d4ed8;
+        text-decoration: none;
+    }
+
+    /* Smooth scrolling for TOC links */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Section anchors for TOC */
+    section.panel[id] {
+        scroll-margin-top: 2rem;
+    }
+
+    /* Panel styling */
+    .panel {
+        margin-bottom: 2rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .panel header {
+        background: #f8fafc;
+        border-bottom: 1px solid #e2e8f0;
+        padding: 1rem 1.5rem;
+    }
+
+    .panel header h1 {
+        margin: 0;
+        font-size: 1.5rem;
+        color: #1e293b;
+        font-weight: 600;
+    }
+
+    .panel > div {
+        padding: 1.5rem;
+    }
+</style>
+
 <article>
 
     <div class="print-link">
@@ -23,6 +103,15 @@ topnav: maa10
         </ul>
     </div>
 
+    <!-- Table of Contents -->
+    <nav class="course-toc">
+        <h2>Sisällysluettelo</h2>
+        <ul>
+            <li><a href="#tavoitteet">Kurssin tavoitteet ja keskeiset sisällöt</a></li>
+            <li><a href="#ohjeita">Opiskeluohjeita</a></li>
+        </ul>
+    </nav>
+
     <section>
         <header>
             <h1>
@@ -32,15 +121,14 @@ topnav: maa10
     </section>
 
 
-    <section class="panel">
+    <section class="panel" id="tavoitteet">
         <header>
             <h1>
-                <a data-toggle="collapse" class="collapsed" data-target="#tavoitteet">
-                    Kurssin tavoitteet ja keskeiset sisällöt
-                </a>
+                Kurssin tavoitteet ja keskeiset sisällöt
             </h1>
         </header>
-        <div id="tavoitteet" class="collapse">
+
+        <p>Kurssin tavoitteena on, että</p>
 
 
             <p>Kurssin tavoitteena on, että</p>
@@ -97,39 +185,22 @@ topnav: maa10
             </ul>
 
 
-            <div class="close-section">
-                <a data-toggle="collapse" class="collapsed" data-target="#tavoitteet">
-                    Sulje kappale
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section class="panel">
+    <section class="panel" id="ohjeita">
         <header>
             <h1>
-                <a data-toggle="collapse" class="collapsed" data-target="#ohjeita">
-                    Opiskeluohjeita
-                </a>
+                Opiskeluohjeita
             </h1>
         </header>
-        <div id="ohjeita" class="collapse">
-            <p>
-                Kurssimateriaali on jaettu neljään lukuun: Kombinatoriikkaa, Todennäköisyys, Todennäköisyysjakaumia ja Tilastot
-            </p>
+
+        <p>
+            Kurssimateriaali on jaettu neljään lukuun: Kombinatoriikkaa, Todennäköisyys, Todennäköisyysjakaumia ja Tilastot
+        </p>
             <p>
 
                 Pääajatus kurssimateriaalissa on, että matematiikkaa oppii parhaiten tekemällä matematiikkaa. Materiaali on tämän vuoksi kirjoitettu niin, että teet tehtäviä käytännössä koko ajan. Jokainen luku sisältää kolme eri tehtäväsarjaa. Ensimmäisen tehtäväsarjan tehtävät ovat teorian seassa. Tarkoitus on, että etenet materiaalissa tekemällä jokaisen näistä tehtävistä. Voit hyvin tehdä tehtäviä yhdessä kaverin kanssa ja voit kysyä opettajalta heti, jos et ymmärrä jotain asiaa. Asia voi olla jokin tietty tehtävä, teoriassa oleva virke tai esimerkiksi vieras matemaattinen symboli. Pääasia on, että sinä itse teet tehtävät ja ymmärrät, mitä teet. Tämän tehtäväsarjan jälkeen kyseisen luvun teoria on käsitelty ja on aika harjoitella ja syventää juuri opittua. Ennen tätä opettaja pitää ehkä yhteisen opetustuokion tai -keskustelun, jossa pohditaan yhdessä luvun keskeisiä asioita tai työskentelyssä esiin tulleita haastavia kohtia.
                 Mahdollisen opetustuokion jälkeen jatka harjoittelua luvun lopussa olevien kahden tehtäväsarjan tehtävien avulla. Luonnollisesti mitä enemmän harjoittelet, sitä paremmaksi tulet. Kun olet valmis, tee luvun lopussa oleva(t) itsearviointitesti(t). Niiden tarkoitus on kertoa sinulle, oletko ymmärtänyt luvun olennaiset asiat ja kehittää samalla oman oppimisesi arviointia, joka on tärkeä tulevaisuuden taito. Testeissä pärjääminen ei vielä tarkoita, että osaat luvun asiat esimerkiksi kiitettävällä tasolla, vaan testit keskittyvät vahvan perusosaamisen tutkimiseen. Ennen siirtymistä seuraavaan lukuun opettaja haluaa ehkä vielä koota luvussa opittuja asioita sekä antaa palautetta oppimisesta ja sen etenemisestä yhteisessä opetuskeskustelussa.
             </p>
 
-            <div class="close-section">
-                <a data-toggle="collapse" class="collapsed" data-target="#ohjeita">
-                    Sulje kappale
-                </a>
-            </div>
-        </div>
-    </section>
-    
 
 </article>
+

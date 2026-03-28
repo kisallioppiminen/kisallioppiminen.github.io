@@ -1,7 +1,6 @@
 # Kisallioppiminen.fi with marking system
 
-* Development/Staging version: https://ohtukisalli.github.io/
-* Production version: http://beta-kisallioppiminen.github.io
+* Production version: https://ruumi5.github.io/web-page/
 
 ## Setting up Kisallioppiminen.fi site locally with Jekyll
 

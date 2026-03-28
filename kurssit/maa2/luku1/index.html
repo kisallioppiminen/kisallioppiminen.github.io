@@ -25,16 +25,11 @@ topnav: maa2
             <h1>Ensimmäisen asteen polynomifunktio</h1>
         </header>
     </section>
-    <section class="panel">
+    <section class="panel" id="tavoitteet">
         <header>
-            <h1>
-                <a data-toggle="collapse" class="collapsed" data-target="#luvun1-tavoitteet">
-                    Luvun tavoitteet
-                </a>
-            </h1>
+            <h1>🎯 Luvun tavoitteet</h1>
         </header>
-        <div id="luvun1-tavoitteet" class="collapse">
-
+        <div>
             <div class="objective">
 
                 <p>
@@ -52,16 +47,11 @@ topnav: maa2
         </div>
     </section>
 
-    <section class="panel">
+    <section class="panel" id="teoria">
         <header class="otsikko">
-            <h1>
-                <a data-toggle="collapse" class="collapsed" data-target="#1asteenPolynomifunktio">
-                    Ensimmäisen asteen polynomifunktio ja vakiofunktio
-                </a>
-            </h1>
+            <h1>📖 Ensimmäisen asteen polynomifunktio ja vakiofunktio</h1>
         </header>
-        <div id="1asteenPolynomifunktio" class="collapse">
-
+        <div>
             <div class="teoria">
                 <p>
                     Tässä kappaleessa tutkitaan vakiofunktioita sekä ensimmäisen asteen polynomifunktioita, joihin tutustuttiin jo MAY1-kurssilla. Palautetaan aluksi mieleen MAY1-kurssilta tuttu funktion nollakohdan määritelmä:
@@ -80,9 +70,11 @@ topnav: maa2
 
                     <header>
                         <h1>
-                            <div class="checkbox-group"></div>
-                            <a data-toggle="collapse" class="collapsed" data-target="#1aste1">
-                                Funktion kuvaajan tulkitseminen
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="exercise-1aste1" aria-label="Merkitse tehtävä suoritetuksi">
+                            </div>
+                            <a href="#1aste1" data-toggle="collapse" class="collapsed">
+                                ✏️ Funktion kuvaajan tulkitseminen
                             </a>
                         </h1>
                     </header>
@@ -100,12 +92,12 @@ topnav: maa2
                         </ol>
                         </p>
                         <p>
-                            <img src="/kurssit/maa2/kuvat/EAk1.png" style="max-width: 100%; width: auto; height: auto;" />
+                            <img src="/kurssit/maa2/kuvat/EAk1.png" style="max-width: 100%; width: auto; height: auto;" loading="lazy" />
                         </p>
                         <h2>
-                        <a data-toggle="collapse" class="collapsed" data-target="#1aste1_v">
-                            Vastaus
-                        </a>
+                            <a href="#1aste1_v" data-toggle="collapse" class="collapsed">
+                                💡 VASTAUS
+                            </a>
                         </h2>
                         <div id="1aste1_v" class="collapse">
                             <ol class="a">
@@ -2470,3 +2462,4 @@ topnav: maa2
         </div>
     </section>
 </article>
+

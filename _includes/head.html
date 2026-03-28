@@ -12,11 +12,13 @@
 	<link rel="dns-prefetch" href="//www.google-analytics.com" data-proofer-ignore>
     <!-- Load css from _config.yml -->
 	{% for href in site.resources.css %}
-		<link rel="stylesheet" href="{{ href }}" type="text/css">
+		{% if href contains "//" %}
+			<link rel="stylesheet" href="{{ href }}" type="text/css">
+		{% else %}
+			<link rel="stylesheet" href="{{ site.baseurl }}{{ href }}" type="text/css">
+		{% endif %}
     {% endfor %}
-	<link rel="icon" type="image/png" href="/img/favicon.png">
-
-	<!-- mathjax config similar to math.stackexchange -->
+	<link rel="icon" type="image/png" href="{{ site.baseurl }}/img/favicon.png">
 	<script type="text/x-mathjax-config">
 		MathJax.Hub.Config({
   		jax: ["input/TeX", "output/HTML-CSS"],

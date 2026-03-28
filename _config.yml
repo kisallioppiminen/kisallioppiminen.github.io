@@ -1,6 +1,7 @@
 # Site settings
 title: Kisallioppiminen.fi
-backendbaseurl: "https://kisallioppiminen.github.io/"
+baseurl: "/web-page/"
+backendbaseurl: "https://ruumi5.github.io/web-page/"
 
 # Build settings
 markdown: kramdown
@@ -34,14 +35,9 @@ resources:
     - "/js/common.js"
     - "/js/session.js"
     - "/js/view.js"
-    - "/js/scheduleManager.js"
     - "/js/exercises.js"
-    - "/js/backend.js"
     - "/js/jquery-ui.js"
     - "/js/mooc.js"
-    - "/js/button/button.js"
-    - "/js/statistics.js"
-    - "/js/scheduleCheckbox.js"
     - "/js/init.js"
 
 
